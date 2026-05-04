@@ -28,8 +28,7 @@ export async function POST(req: Request) {
     const { data, error } = await resend.emails.send({
       from: `${companyInfo.name} <${FROM_EMAIL}>`,
       to: email,
-      cc: FROM_EMAIL,
-      bcc: "princesharma2899@gmail.com",
+      bcc: [FROM_EMAIL, "princesharma2899@gmail.com"],
       subject: "We've Received Your Submission",
       html,
       replyTo: email,
