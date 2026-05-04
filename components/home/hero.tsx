@@ -3,6 +3,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@radix-ui/react-tabs";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Link from "next/link";
 import { FeaturesType } from "@/types";
 import { ArrowRight } from "lucide-react";
 import { 
@@ -126,9 +127,12 @@ const Hero: React.FC<HeroProps> = ({ data }) => {
                     className="mt-2 md:mt-4 w-fit gap-2 bg-primary hover:bg-primary/90 text-primary-foreground font-medium transition-all duration-300 hover:translate-x-1" 
                     size="default"
                     aria-label={tab.content.buttonText}
+                    asChild
                   >
-                    {tab.content.buttonText}
-                    <ArrowRight className="w-4 h-4" />
+                    <Link href="/contact">
+                      {tab.content.buttonText}
+                      <ArrowRight className="w-4 h-4" />
+                    </Link>
                   </Button>
                 </div>
                 

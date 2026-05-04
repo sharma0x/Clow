@@ -169,7 +169,7 @@ export const features: FeaturesType = {
         title: "Launch MVPs in Weeks, Not Months",
         description:
           "Use Bubble, FlutterFlow, or Plasmic to build web and mobile apps 3x faster, with custom code for complex features.",
-        buttonText: "Explore Services",
+        buttonText: "Contact Us",
         imageSrc: "/hero/launch-mvp-tab1.png", // Replace with app screenshot
         imageAlt: "Web and mobile app development",
       },
@@ -183,7 +183,7 @@ export const features: FeaturesType = {
         title: "Save Thousands with Low-Code",
         description:
           "Build enterprise-grade apps and automations at $25/hour, using open-source tools to eliminate SaaS fees.",
-        buttonText: "See Pricing",
+        buttonText: "Contact Us",
         imageSrc: "/hero/low-code-tab2.png", // Replace with automation workflow image
         imageAlt: "Cost-efficient development",
       },
@@ -197,7 +197,7 @@ export const features: FeaturesType = {
         title: "Own Your Code and Data",
         description:
           "Deploy on your AWS or Google Cloud with tools like Pocketbase and n8n, ensuring no vendor lock-in.",
-        buttonText: "Start Your Project",
+        buttonText: "Contact Us",
         imageSrc: "/hero/own-code-tab3.png", // Replace with cloud hosting image
         imageAlt: "Self-hosted solutions",
       },
@@ -240,7 +240,6 @@ export const testimonials = [
 
 
 export const contactDetails = {
-  email: "contactclowtech@gmail.com",
   address: "Bangalore, India",
   social: {
     twitter: "https://twitter.com/clowtech",

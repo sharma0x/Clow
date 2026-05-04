@@ -20,14 +20,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import Link from "next/link";
-import { contactDetails } from "@/config/site";
-import { Mail, Phone, MapPin, Check } from "lucide-react";
-import {
-  IconBrandInstagram,
-  IconBrandLinkedin,
-  IconBrandTwitter,
-} from "@tabler/icons-react";
+import { Check } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -105,68 +98,8 @@ const ContactUsPage: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-5 gap-12">
-          {/* Contact Info */}
-          <div className="md:col-span-2 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-8 shadow-lg h-fit">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">
-              Contact Information
-            </h2>
-            <div className="space-y-6">
-              <div className="flex items-start">
-                <div className="bg-blue-600 text-white rounded-full p-2">
-                  <Mail className="h-5 w-5" />
-                </div>
-                <div className="ml-4">
-                  <h3 className="text-lg font-medium">Email</h3>
-                  <p className="text-blue-600">
-                    <Link href={`mailto:${contactDetails.email}`}>
-                      {contactDetails.email}
-                    </Link>
-                  </p>
-                  <p className="text-sm text-gray-500">
-                    We&apos;ll respond within 24 hours
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-start">
-                <div className="bg-blue-600 text-white rounded-full p-2">
-                  <MapPin className="h-5 w-5" />
-                </div>
-                <div className="ml-4">
-                  <h3 className="text-lg font-medium">Office</h3>
-                  <p className="text-gray-600">Bangalore, India</p>
-                </div>
-              </div>
-            </div>
-            <div className="mt-12">
-              <h3 className="text-lg font-medium text-gray-900 mb-4">
-                Follow Us
-              </h3>
-              <div className="flex space-x-4">
-                <a
-                  href={contactDetails.social.twitter}
-                  className="text-gray-500 hover:text-blue-600"
-                >
-                  <IconBrandTwitter size={30} />
-                </a>
-                <a
-                  href={contactDetails.social.linkedin}
-                  className="text-gray-500 hover:text-blue-600"
-                >
-                  <IconBrandLinkedin size={30} />
-                </a>
-                <a
-                  href={contactDetails.social.instagram}
-                  className="text-gray-500 hover:text-blue-600"
-                >
-                  <IconBrandInstagram size={30} />
-                </a>
-              </div>
-            </div>
-          </div>
-
+        <div className="max-w-2xl mx-auto w-full">
           {/* Contact Form */}
-          <div className="md:col-span-3">
             <div className="bg-white rounded-xl shadow-lg p-8 border border-gray-100">
               <h2 className="text-2xl font-bold text-gray-900 mb-6">
                 Send us a message
@@ -339,7 +272,6 @@ const ContactUsPage: React.FC = () => {
               )}
             </div>
           </div>
-        </div>
       </div>
     </div>
   );

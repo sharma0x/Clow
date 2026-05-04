@@ -26,7 +26,8 @@ import {
 import Link from "next/link";
 import Image from "next/image";
 import { MenuItem, NavbarProps } from "@/types";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { getCalApi } from "@calcom/embed-react";
 
 
 const Navbar : React.FC<NavbarProps> = ({
@@ -35,6 +36,13 @@ const Navbar : React.FC<NavbarProps> = ({
     auth
 }) => {
   const [isOpen, setIsOpen] = useState(false);
+  
+  useEffect(() => {
+    (async function () {
+      const cal = await getCalApi({"namespace":"30min"});
+      cal("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+    })();
+  }, []);
   
   // Function to close the sheet
   const closeSheet = () => {
@@ -64,8 +72,8 @@ const Navbar : React.FC<NavbarProps> = ({
             </div>
           </div>
           <div className="flex gap-2">
-              <Button asChild variant="outline" size="sm">
-                <Link href={auth.book.url}>{auth.book.title}</Link>
+              <Button variant="outline" size="sm" data-cal-namespace="30min" data-cal-link="clowwork/30min" data-cal-config='{"layout":"month_view"}'>
+                {auth.book.title}
               </Button>
               <Button asChild size="sm">
                 <Link href={auth.quote.url}>{auth.quote.title}</Link>
@@ -112,8 +120,8 @@ const Navbar : React.FC<NavbarProps> = ({
                   </Accordion>
 
                   <div className="flex flex-col gap-3">
-                    <Button asChild variant="outline">
-                      <Link href={auth.book.url} onClick={closeSheet}>{auth.book.title}</Link>
+                    <Button variant="outline" data-cal-namespace="30min" data-cal-link="clowwork/30min" data-cal-config='{"layout":"month_view"}' onClick={closeSheet}>
+                      {auth.book.title}
                     </Button>
                     <Button asChild>
                       <Link href={auth.quote.url} onClick={closeSheet}>{auth.quote.title}</Link>
@@ -135,11 +143,13 @@ const renderMenuItem = (item: MenuItem) => {
       <NavigationMenuItem key={item.title}>
         <NavigationMenuTrigger>{item.title}</NavigationMenuTrigger>
         <NavigationMenuContent className="bg-popover text-popover-foreground">
-          {item.items.map((subItem) => (
-            <NavigationMenuLink asChild key={subItem.title} className="w-80">
-              <SubMenuLink item={subItem} onClick={() => {}} />
-            </NavigationMenuLink>
-          ))}
+          <div className="flex flex-col w-80 p-1">
+            {item.items.map((subItem) => (
+              <NavigationMenuLink asChild key={subItem.title}>
+                <SubMenuLink item={subItem} onClick={() => {}} />
+              </NavigationMenuLink>
+            ))}
+          </div>
         </NavigationMenuContent>
       </NavigationMenuItem>
     );

@@ -2,15 +2,12 @@
 import { getCalApi } from "@calcom/embed-react";
 
 import * as React from "react";
-import Link from "next/link";
-import { cn } from "@/lib/utils";
 import { DIcons } from "dicons";
 import { useAnimate } from "framer-motion";
 
-import { Button, buttonVariants } from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
 
 import { HighlighterItem, HighlightGroup, Particles } from "@/components/ui/highlighter";
-import { contactDetails } from "@/config/site";
 
 function Connect() {
   const [scope, animate] = useAnimate();
@@ -143,62 +140,11 @@ function Connect() {
                     <div className="flex flex-wrap gap-2">
                       <Button
                           data-cal-namespace="30min"
-                          data-cal-link="clowtech/30min"
+                          data-cal-link="clowwork/30min"
                           data-cal-config='{"layout":"month_view"}'
                       >
                         Book a consultation
                       </Button>
-                      <Link
-                        href={`mailto:${contactDetails.email}`}
-                        target="_blank"
-                        className={cn(
-                          buttonVariants({
-                            variant: "outline",
-                            size: "icon",
-                          }),
-                          "border-purple-200 hover:border-purple-300 hover:bg-purple-50 dark:border-purple-800 dark:hover:border-purple-700 dark:hover:bg-purple-900"
-                        )}
-                      >
-                        <span className="flex items-center gap-1">
-                          <DIcons.Mail strokeWidth={1} className="h-5 w-5 text-purple-600 dark:text-purple-400" />
-                        </span>
-                      </Link>
-                      <Link
-                        href={`https://wa.me/${contactDetails.phone}`}
-                        target="_blank"
-                        className={cn(
-                          buttonVariants({
-                            variant: "outline",
-                            size: "icon",
-                          }),
-                          "border-purple-200 hover:border-purple-300 hover:bg-purple-50 dark:border-purple-800 dark:hover:border-purple-700 dark:hover:bg-purple-900"
-                        )}
-                      >
-                        <span className="flex items-center gap-1">
-                          <DIcons.WhatsApp
-                            strokeWidth={1}
-                            className="h-4 w-4 text-purple-600 dark:text-purple-400"
-                          />
-                        </span>
-                      </Link>
-                      <Link
-                        href={contactDetails.social.facebook}
-                        target="_blank"
-                        className={cn(
-                          buttonVariants({
-                            variant: "outline",
-                            size: "icon",
-                          }),
-                          "border-purple-200 hover:border-purple-300 hover:bg-purple-50 dark:border-purple-800 dark:hover:border-purple-700 dark:hover:bg-purple-900"
-                        )}
-                      >
-                        <span className="flex items-center gap-1">
-                          <DIcons.Instagram
-                            strokeWidth={1}
-                            className="h-4 w-4 text-purple-600 dark:text-purple-400"
-                          />
-                        </span>
-                      </Link>
                     </div>
                   </div>
                 </div>

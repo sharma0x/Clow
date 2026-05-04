@@ -130,13 +130,7 @@ export function generateEmailTemplate({
           <p>
             We appreciate your interest in our services and look forward to assisting you.
           </p>
-          <p>Best regards,<br>The ${companyInfo.name} Team</p>
-        </td>
-      </tr>
-      <!-- Footer -->
-      <tr>
-        <td class="email-footer">
-          <p>&copy; 2025 ${companyInfo.name}. All rights reserved.</p>
+          <p>Best regards,<br>${companyInfo.name} Work</p>
         </td>
       </tr>
     </table>
