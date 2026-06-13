@@ -25,6 +25,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const contactFormSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -242,7 +243,16 @@ const ContactUsPage: React.FC = () => {
                             />
                           </FormControl>
                           <div className="space-y-1">
-                            <FormLabel>I agree to the privacy policy</FormLabel>
+                            <FormLabel>
+                              I agree to the{" "}
+                              <Link
+                                href="/privacy-policy"
+                                className="text-blue-600 hover:underline"
+                                target="_blank"
+                              >
+                                privacy policy
+                              </Link>
+                            </FormLabel>
                             <p className="text-sm text-gray-500">
                               We only use your data to respond to your inquiry.
                             </p>

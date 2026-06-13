@@ -240,7 +240,8 @@ export const testimonials = [
 
 
 export const contactDetails = {
-  address: "Bangalore, India",
+  address: "Delhi, India",
+  email: "admin@clow.work",
   social: {
     twitter: "https://twitter.com/clowtech",
     linkedin: "https://www.linkedin.com/in/clowtech",
